@@ -1,0 +1,12 @@
+{
+  "name": "candy-inventory",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2"
+  }
+}
