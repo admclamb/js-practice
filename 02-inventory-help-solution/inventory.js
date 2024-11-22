@@ -18,7 +18,7 @@ export const inventory = [
  * @returns {number} The total number of candy types.
  */
 export function getCandyTypes(inventory) {
-  // TODO: Implement this function
+  return inventory.length;
 }
 
 /**
@@ -27,7 +27,7 @@ export function getCandyTypes(inventory) {
  * @returns {number} The total number of candies in stock.
  */
 export function getTotalCandiesInStock(inventory) {
-  // TODO: Implement this function
+  return inventory.reduce((acc, curr) => acc + curr.inStock, 0);
 }
 
 /**
@@ -36,7 +36,7 @@ export function getTotalCandiesInStock(inventory) {
  * @param {Candy} newCandy - The candy object to add.
  */
 export function addNewCandy(inventory, newCandy) {
-  // TODO: Implement this function
+  inventory.push(newCandy);
 }
 
 /**
@@ -45,7 +45,7 @@ export function addNewCandy(inventory, newCandy) {
  * @returns {boolean} `true` if the candy should be ordered, otherwise `false`.
  */
 export function shouldOrderCandy(candy) {
-  // TODO: Implement this function
+  return candy.inStock < candy.weeklyAverage;
 }
 
 /**
@@ -54,7 +54,7 @@ export function shouldOrderCandy(candy) {
  * @returns {number} The quantity to order.
  */
 export function calculateCandyOrder(candy) {
-  // TODO: Implement this function
+  return candy.weeklyAverage - candy.inStock;
 }
 
 /**
@@ -63,5 +63,5 @@ export function calculateCandyOrder(candy) {
  * @returns {number} The total quantity to order.
  */
 export function calculateTotalCandyOrder(inventory) {
-  // TODO: Implement this function
+  return inventory.reduce((acc, curr) => calculateCandyOrder(curr) + acc, 0);
 }
